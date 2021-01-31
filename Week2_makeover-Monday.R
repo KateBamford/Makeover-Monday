@@ -6,6 +6,8 @@ library(lubridate)
 library(patchwork)
 library(grid)
 
+background.colour <- '#2E2E2E'
+
 data_world <- "katebamford/makeover-monday"
 
 gender_inequality_sql <- data.world::qry_sql("SELECT * FROM jan_2021_data_viz5_gender_inequality_and_hivaids")
