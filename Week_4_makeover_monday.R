@@ -107,7 +107,8 @@ layout <- c(
 patchwork <- chart + map + plot_layout(guides = 'collect') +
   plot_layout(design = layout) 
 
-patchwork + plot_annotation(
+final_plot <- 
+  patchwork + plot_annotation(
   title = 'Indian Coal Mine Location and Production',
   caption = paste0('Data source:\nRSandeep Pai and Hisham Zerriffi.\nA novel dataset for analysing sub-national socioeconomic developments\nin the Indian coal industry, IOPSciNotes,\nhttps://doi.org/10.1088/2633-1357/abdbbb')
 ) & 
@@ -115,4 +116,4 @@ patchwork + plot_annotation(
         plot.title = element_text(size = 25),
         plot.background = element_rect(fill = background.colour, colour = background.colour))
 
-
+ggsave(filename = "Outputs/IndiaCoal.png", plot = final_plot, width = 11.5, height = 8, dpi = 300)
